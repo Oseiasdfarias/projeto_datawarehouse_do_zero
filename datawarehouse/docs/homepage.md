@@ -25,6 +25,7 @@ graph TD;
         F --> D[Definição da função salvar_no_postgres]
         D --> G[Salvar dados no banco de dados PostgreSQL]
     end
+
 ```
 
 ### 1. Seeds
