@@ -6,7 +6,7 @@
   <img wigth="90%" src="./utils/diagram.svg">
 </p>
 
-### Texto Revisado e Detalhado
+### Descrição do Projeto
 
 ---
 
