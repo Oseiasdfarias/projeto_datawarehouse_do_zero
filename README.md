@@ -2,6 +2,10 @@
   <img height="50px" src="./utils/proj.png">
 </p>
 
+<p align="center">
+  <img height="15" src="./utils/Data_Warehous.png"> &
+  <img height="15" src="./utils/ETL.png">
+</p>
 
 <h3>Sumário</h3>
 
