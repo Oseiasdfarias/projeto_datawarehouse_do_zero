@@ -8,34 +8,23 @@ Este projeto utiliza DBT (Data Build Tool) para gerenciar e transformar dados de
 
 ## Estrutura do Projeto
 
+
 ```mermaid
-graph TD
-    A[Início] --> B[Extrair Dados das Commodities]
-    B --> C[Transformar Dados das Commodities]
-    C --> D[Carregar Dados no PostgreSQL]
-    D --> E[Fim]
-
-    subgraph Extrair
-        B1[Buscar Dados de Cada Commodity]
-        B2[Adicionar Dados na Lista]
+graph TD;
+    subgraph Extração
+        A[Importação das bibliotecas necessárias] --> B[Definição da função buscar_dados_commodities]
+        B --> E[Busca de dados das commodities]
     end
 
-    subgraph Transformar
-        C1[Concatenar Todos os Dados]
-        C2[Preparar DataFrame]
+    subgraph Transformação
+        E --> C[Definição da função buscar_todos_dados_commodities]
+        C --> F[Concatenar dados de todas as commodities]
     end
 
-    subgraph Carregar
-        D1[Salvar DataFrame no PostgreSQL]
+    subgraph Carga
+        F --> D[Definição da função salvar_no_postgres]
+        D --> G[Salvar dados no banco de dados PostgreSQL]
     end
-
-    B --> B1
-    B1 --> B2
-    B2 --> C
-    C --> C1
-    C1 --> C2
-    C2 --> D
-    D --> D1
 ```
 
 ### 1. Seeds
