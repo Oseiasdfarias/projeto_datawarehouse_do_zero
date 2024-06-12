@@ -172,8 +172,14 @@ Com isso é possivel realizar a transformação dos dados, basta executar o segu
  ❯ dbt run
 ```
 
+Ao acessar o banco de dados, em `views` deve ter os seguintes views, `dm_commodities`, `stg_commodities`, `stg_movimentacao_commodities`.
+
+
 |Views| campos|
 |---|---|
 |dm_commodities|data,simbolo,valor_fechamento, acao, quantidade,valor, ganho|
 |stg_commodities|data, valor_fechamento, simbolo|
 |stg_movimentacao_commodities|data, simbolo, acao, quantidade|
+
+
+## Em desenvolvimento ...
