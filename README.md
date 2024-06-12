@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="70px" src="./reports/figures/depressao_logo.png">
+  <img height="50px" src="./utils/proj.png">
 </p>
 
 
