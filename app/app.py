@@ -17,13 +17,15 @@ DB_PASS = os.getenv('DB_PASS_PROD')
 DB_SCHEMA = os.getenv('DB_SCHEMA_PROD')
 
 # Criar a URL de conexão do banco de dados
-DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"  # noqa: E501
 
 # Criar o engine de conexão com o banco de dados
 engine = create_engine(DATABASE_URL)
 
+
+# Consultar os dados da tabela dm_commodities
 def get_data():
-    query = f"""
+    query = """
     SELECT
         data,
         simbolo,
@@ -35,14 +37,21 @@ def get_data():
     FROM
         public.dm_commodities;
     """
-    df = pd.read_sql(query, engine)
-    return df
+    try:
+        df = pd.read_sql(query, engine)
+        return df
+    except ProgrammingError as e:
+        st.error(f"Erro ao acessar a tabela 'dm_commodities' no schema '{DB_SCHEMA}': {e}")  # noqa: E501
+        return pd.DataFrame()  # Retorna um DataFrame vazio em caso de erro
+
 
 # Configurar a página do Streamlit
-st.set_page_config(page_title='Dashboard do diretor', layout='wide')
+st.set_page_config(page_title='Dashboard de Commodities',
+                   layout='wide')
+
 
 # Título do Dashboard
-st.title('Esse e um texto')
+st.title("Dashboard de Commodities")
 
 # Descrição
 st.write("""

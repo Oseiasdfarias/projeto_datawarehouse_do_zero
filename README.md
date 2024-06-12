@@ -1,5 +1,8 @@
 # Projeto DW do Zero
 
+<p align="center">
+  <img wigth="90%" src="./utils/diagram.svg">
+</p>
 
 ### Explicação do Workflow ETL
 
