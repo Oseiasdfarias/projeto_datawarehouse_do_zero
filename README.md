@@ -21,19 +21,20 @@ Este diagrama segue o estilo ETL, destacando claramente as etapas de Extração,
 
 ```mermaid
 graph TD;
-    subgraph Extração
-        A[Importação das bibliotecas necessárias] --> B[Definição da função buscar_dados_commodities]
-        B --> E[Busca de dados das commodities]
+    subgraph Extract_Load
+        A1[buscar_dados_commodities] --> B1[buscar_todos_dados_commodities]
+        B1 --> C1[carregar_dados_no_postgres]
     end
 
-    subgraph Transformação
-        E --> C[Definição da função buscar_todos_dados_commodities]
-        C --> F[Concatenar dados de todas as commodities]
+    subgraph Transform
+        D1[stg_commodities.sql] --> E1[stg_movimentacao_commodities.sql]
+        E1 --> F1[dm_commodities.sql]
     end
 
-    subgraph Carga
-        F --> D[Definição da função salvar_no_postgres]
-        D --> G[Salvar dados no banco de dados PostgreSQL]
-    end
+    A[API de Commodities] -->|Extrai Dados| Extract_Load
+    Extract_Load -->|Carrega Dados| C[PostgreSQL]
+    C -->|Armazena Dados| D[Data Warehouse]
+    Data_Warehouse -->|Transforma Dados| Transform
+    Transform -->|Cria Views| F[Dashboard Streamlit]
 
 ```
