@@ -1,3 +1,29 @@
+<p align="center">
+  <img height="70px" src="./reports/figures/depressao_logo.png">
+</p>
+
+
+<h3>Sumário</h3>
+
+
+<p id="roadmap"> 
+  <ul>
+    <li> <a href="#techs">Tecnologias</a></li>
+    <li> <a href="#id1">  Descrição do Projeto</a> </li>
+    <li> <a href="#id2">  Explicação do Workflow ETL</a> </li>
+    <li> <a href="#id3">  Como executar o Projeto</a> </li>
+  </ul>
+</p>
+
+
+<h3  id="techs">Tecnologias</h3>
+
+<p align=center> <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54"> <img src="https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white"> <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white"> <img src="https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white"> <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"> <img src=""> <img src=""> 
+  </ul>
+  <br>
+</p>
+
+
 # Projeto de Data Warehouse de Commodities
 
 
@@ -6,7 +32,8 @@
   <img wigth="90%" src="./utils/diagram.svg">
 </p>
 
-### Descrição do Projeto
+
+<h3  id="id1">Descrição do Projeto</h3>
 
 ---
 
@@ -39,7 +66,8 @@ Este projeto é fundamental para qualquer empresa que precise de uma análise pr
 Com essa abordagem, sua empresa poderá responder perguntas críticas sobre vendas e movimentações de commodities de forma rápida e eficaz, aumentando a eficiência operacional e a competitividade no mercado.
 
 
-### Explicação do Workflow ETL
+<h3  id="id2">Explicação do Workflow ETL</h3>
+
 
 1. **Extração**:
     - **Importação das bibliotecas necessárias**: Importamos as bibliotecas `yfinance`, `pandas` e `sqlalchemy`.
@@ -79,7 +107,8 @@ graph TD;
 
 ---
 
-# Como usar o Projeto
+<h3  id="id3">Como executar o Projeto</h3>
+
 
 Para usar o projeto você deve criar um ambiente virtual do Python, para isso você deve ter instalado em seu computador o [pyenv](https://github.com/pyenv/pyenv), [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html) ou [poetry](https://python-poetry.org/docs/).
 
