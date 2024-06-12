@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <img height="15" src="./utils/Data_Warehous.png"> &
-  <img height="15" src="./utils/ETL.png">
+  <img height="20" src="./utils/Data_Warehous.png"> &
+  <img height="20" src="./utils/ETL.png">
 </p>
 
 <h3>Sumário</h3>
