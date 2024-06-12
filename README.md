@@ -76,3 +76,104 @@ graph TD;
     Transform -->|Cria Views| F[Dashboard Streamlit]
 
 ```
+
+---
+
+# Como usar o Projeto
+
+Para usar o projeto você deve criar um ambiente virtual do Python, para isso você deve ter instalado em seu computador o [pyenv](https://github.com/pyenv/pyenv), [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html) ou [poetry](https://python-poetry.org/docs/).
+
+Obs: Copie apenas o texto, sem o simbolo `❯`.
+
+```bash
+# Ativando a virtual env
+❯ poetry shell
+
+# instalando as dependências
+❯ poetry install
+```
+
+
+```bash
+❯ python -m venv .venv
+
+# Ativando o ambiente no Windows
+❯ source .venv/bin/activate
+
+# Ativando o ambiente no Linux e Mac
+❯ source .venv/bin/activate
+
+❯ pip install -r requirements.txt
+```
+
+Agora é necessário usar um banco de dados Postgres, uma boa forma de iniciar seus trabalhos com banco de dados é usando o [Render](https://docs.render.com/databases), com ele você cria um banco de dados postgres em alguns clicque, para criar o seu banco de dados usando essa plataforma assista a esse [Tutorial](https://www.youtube.com/watch?v=icpPqD0tjLg)
+
+
+Após criar o banco de dados postgres você deve criar um arquivo `.env` que conterar o seguintes campos:
+
+
+```bash
+DB_HOST_PROD=dpg-cpke84q0si5c73cp9uog-a.virginia-postgres.render.com
+DB_PORT_PROD=5432
+DB_NAME_PROD=nome_banco_de_dados_criado
+DB_USER_PROD=nome_do_usuario_do_banco_de_dados_criado
+DB_PASS_PROD=senha_do_banco_de_dados
+DB_SCHEMA_PROD=public
+DB_THREADS_PROD=1
+DB_TYPE_PROD=postgres
+DBT_PROFILES_DIR=../
+```
+
+mude apenas os campos, `DB_NAME_PROD`, `DB_USER_PROD`, `DB_PASS_PROD`.
+
+# Executando o projeto
+
+Após os procedimentos acima terem sido feitos, o proximo passo é executar o projeto, para isso inicia-se executando o `Extract` e `Load` que que foi desenvolvido no código `extract_load.py` que está dentro da pasta `src`, para executa-lo, basta roda o seguinte comando no terminal.
+
+```bash
+❯ python src/extract_load.py
+```
+
+Com isso, o banco de dados postgres deve está com as seguintes tabelas criadas:
+
+|Tables| campos|
+|---|---|
+|commodities|date, symbol, action, quantity|
+|movimentacao_commodities|Date, Close, simbolo|
+
+
+Caso não tenha ocorrido nenhum erro anteriormente, agora deve-se executar o comando que vai realizar o `transform`, para isso vamos usar o `dbt` para rodar as transformações contidas nos arquivos `sql` do projeto:
+
+Antes de realizar o transformação, você pode verificar se o `dbt` consegue se comunicar com o banco de dados postgres, para isso entre para dentro da pasta `datawarehouse` pelo terminal e rodo o seguinte comando:
+
+
+```bash
+❯ dbt debug
+```
+
+caso tenha a seguinte mensagem no terminal, seguinifica que o `dbt` está se conectando ao banco de dados postgres:
+
+
+```bash
+.
+.
+.
+23:25:46    retries: 1
+23:25:46  Registered adapter: postgres=1.8.1
+23:25:47    Connection test: [OK connection ok]
+
+23:25:47  All checks passed!
+```
+
+Com isso é possivel realizar a transformação dos dados, basta executar o seguinte comando dentro da pasta `datawarehouse` pelo termianl:
+
+
+```bash
+ ❯ dbt run
+```
+
+|Views| campos|
+|---|---|
+|dm_commodities|data,simbolo,valor_fechamento, acao, quantidade,valor, ganho|
+|stg_commodities|data, valor_fechamento, simbolo|
+|stg_movimentacao_commodities|data, simbolo, acao, quantidade|
