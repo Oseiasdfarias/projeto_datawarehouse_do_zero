@@ -215,4 +215,25 @@ Ao acessar o banco de dados, em `views` deve ter os seguintes views, `dm_commodi
 |stg_movimentacao_commodities|data, simbolo, acao, quantidade|
 
 
+---
+
+# Certificado
+
+
+
+<p align="center">
+  <img wigth="90%" src="./utils/Data Warehouse com Python, SQL e dbt-core.jpg">
+</p>
+
+
+
 ## Em desenvolvimento ...
+
+
+
+<h3  id="id9">🎥 Rede Social</h3>
+
+<p align=center> <a href="https://oseiasfarias.info"><img src="https://img.shields.io/badge/Portfólio-%230077B5.svg?style=for-the-badge&logoColor=white"></a> <a href="https://www.linkedin.com/in/oseiasfarias/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+<a href="https://oseiasfarias.medium.com"><img src="https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white"></a>
+<a href="https://www.kaggle.com/osiasdfarias"><img src="https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&logo=kaggle&logoColor=white"></a>
+</p>
