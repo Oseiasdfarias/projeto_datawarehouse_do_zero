@@ -222,7 +222,7 @@ Ao acessar o banco de dados, em `views` deve ter os seguintes views, `dm_commodi
 
 
 <p align="center">
-  <img wigth="90%" src="./utils/Data Warehouse com Python, SQL e dbt-core.jpg">
+  <img wigth="70%" src="./utils/Data Warehouse com Python, SQL e dbt-core.jpg">
 </p>
 
 
