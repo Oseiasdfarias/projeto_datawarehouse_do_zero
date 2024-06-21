@@ -111,7 +111,7 @@ graph TD;
 
 ---
 
-<h3  id="id3">Como executar o Projeto</h3>
+<h2  id="id3">Como executar o Projeto</h2>
 
 
 Para usar o projeto você deve criar um ambiente virtual do Python, para isso você deve ter instalado em seu computador o [pyenv](https://github.com/pyenv/pyenv), [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html) ou [poetry](https://python-poetry.org/docs/).
@@ -159,7 +159,9 @@ DBT_PROFILES_DIR=../
 
 mude apenas os campos, `DB_NAME_PROD`, `DB_USER_PROD`, `DB_PASS_PROD`.
 
-# Executando o projeto
+
+<h3  id="id2">Executando o ETL</h3>
+
 
 Após os procedimentos acima terem sido feitos, o proximo passo é executar o projeto, para isso inicia-se executando o `Extract` e `Load` que que foi desenvolvido no código `extract_load.py` que está dentro da pasta `src`, para executa-lo, basta roda o seguinte comando no terminal.
 
@@ -215,6 +217,15 @@ Ao acessar o banco de dados, em `views` deve ter os seguintes views, `dm_commodi
 |stg_movimentacao_commodities|data, simbolo, acao, quantidade|
 
 
+
+<h3  id="id2">Dashboard de Commodities</h3>
+
+Para implementar o Dashboard foi usando o `streamlit`, foi criando um simples Dashboard com o intuito de mostrar as informações dos dados já tratados no ETL. Para executar o dashboard basta roda o comando abaixo em seu terminal com o ambiente virtual do projeto ativado.
+
+```bash
+ ❯ streamlit run app/app.py
+```
+
 ---
 
 # Certificado
@@ -226,10 +237,7 @@ Ao acessar o banco de dados, em `views` deve ter os seguintes views, `dm_commodi
 </p>
 
 
-
-## Em desenvolvimento ...
-
-
+---
 
 <h3  id="id9">🎥 Rede Social</h3>
 
