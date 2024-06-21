@@ -66,8 +66,10 @@ st.dataframe(df)
 
 st.subheader('Gráficos das Commodities | 2024-06-10')
 col1, col2 = st.columns(2)
-fig1 = px.bar(df, x='simbolo', y='quantidade', text_auto='.2s')
+fig1 = px.bar(df, x='simbolo', y='quantidade', text_auto='.2s',
+              title="Quantidade de commodities no dia")
 col1.plotly_chart(fig1)
 
-fig2 = px.bar(df, x='simbolo', y='ganho', text_auto='.2s')
+fig2 = px.bar(df, x='simbolo', y='ganho', text_auto='.2s',
+              title="Ganho no dia por commodities")
 col2.plotly_chart(fig2)
