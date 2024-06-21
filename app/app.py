@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import streamlit as st
+import plotly.express as px
 from sqlalchemy import create_engine
 from sqlalchemy.exc import ProgrammingError
 from dotenv import load_dotenv
@@ -46,8 +47,7 @@ def get_data():
 
 
 # Configurar a página do Streamlit
-st.set_page_config(page_title='Dashboard de Commodities',
-                   layout='wide')
+st.set_page_config(page_title='Dashboard de Commodities')
 
 
 # Título do Dashboard
@@ -62,3 +62,12 @@ Este dashboard mostra os dados de commodities e suas transações.
 df = get_data()
 
 st.dataframe(df)
+
+
+st.subheader('Gráficos das Commodities | 2024-06-10')
+col1, col2 = st.columns(2)
+fig1 = px.bar(df, x='simbolo', y='quantidade', text_auto='.2s')
+col1.plotly_chart(fig1)
+
+fig2 = px.bar(df, x='simbolo', y='ganho', text_auto='.2s')
+col2.plotly_chart(fig2)

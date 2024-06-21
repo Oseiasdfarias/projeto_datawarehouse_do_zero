@@ -226,6 +226,10 @@ Para implementar o Dashboard foi usando o `streamlit`, foi criando um simples Da
  ❯ streamlit run app/app.py
 ```
 
+<p align="center">
+  <img wigth="90%" src="./utils/dashboard.png">
+</p>
+
 ---
 
 # Certificado
